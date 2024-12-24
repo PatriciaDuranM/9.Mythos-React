@@ -9,3 +9,9 @@ export const FONT_WEIGHT = {
 	extrabold: 800,
 	black: 900
 };
+
+export const FONTS = {
+	cinzel: '"Cinzel", serif;',
+	poppins: '"Poppins", serif;',
+	playfair: '"Playfair", serif;'
+};
