@@ -1,5 +1,7 @@
 import { createGlobalStyle } from 'styled-components';
 import './normalize.css';
+import { COLORS } from './Colors';
+import { FONTS } from './FontsStyles';
 export const GlobalStyles = createGlobalStyle`
     *,
     *::after,
@@ -22,6 +24,13 @@ export const GlobalStyles = createGlobalStyle`
     a {
         text-decoration: none;
         color: inherit;
+    }
+
+    body{
+        margin:0;
+        background-color: ${COLORS.backgroundGrey};
+        font-family: ${FONTS.poppins};
+        color: white;
     }
 
 `;

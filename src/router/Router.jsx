@@ -1,10 +1,15 @@
 import { Route, Routes } from 'react-router-dom';
+import Home from '../pages/home/Home';
+import { MENU } from '../constants/common';
+import Gods from '../pages/gods/Gods';
 
 const Router = () => {
 	return (
 		<Routes>
-			<Route path='/' element={<h1>HOME</h1>}></Route>
-			<Route path='/about' element={<h1>ABOUT</h1>}></Route>
+			<Route path='/' element={<Home />}></Route>
+			{MENU.map(item => (
+				<Route key={item.id} element={<Gods />} path={item.link}></Route>
+			))}
 		</Routes>
 	);
 };
