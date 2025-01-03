@@ -36,7 +36,7 @@ const MainGodPage = ({ mythology }) => {
 					<StyledTab onClick={() => tabChange('myths')}>MYTHS</StyledTab>
 				</StyledTabsBox>
 				<StyledContainer>
-					<StyledName>{selectedInfo.title.toUpperCase()}</StyledName>
+					<StyledName>{selectedInfo.title.toUppercase()}</StyledName>
 					<StyledImage src={selectedInfo.imgMob} />
 					<StyledDivider />
 					<StyledText>{selectedInfo.text}</StyledText>
