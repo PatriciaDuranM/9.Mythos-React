@@ -3,38 +3,36 @@ import { EGYPTIAN } from './egyptian';
 import { GREEK } from './greek';
 import { NORDIC } from './nordic';
 import { ROMAN } from './roman';
+import { COLORS } from '../styles/Colors';
 
 export const MENU = [
 	{
 		id: v4(),
 		title: 'ROMAN',
 		link: '/roman',
-		object: ROMAN
+		mythologyContent: ROMAN,
+		color: COLORS.red
 	},
 	{
 		id: v4(),
 		title: 'GREEK',
 		link: '/greek',
-		object: GREEK
+		mythologyContent: GREEK,
+		color: COLORS.blue
 	},
 	{
 		id: v4(),
 		title: 'EGYPTIAN',
 		link: '/egyptian',
-		object: EGYPTIAN
+		mythologyContent: EGYPTIAN,
+		color: COLORS.yellow
 	},
 
 	{
 		id: v4(),
 		title: 'NORDIC',
 		link: '/nordic',
-		object: NORDIC
+		mythologyContent: NORDIC,
+		color: COLORS.green
 	}
 ];
-
-export const MYTHOLOGIES = {
-	1: ROMAN,
-	2: GREEK,
-	3: EGYPTIAN,
-	4: NORDIC
-};

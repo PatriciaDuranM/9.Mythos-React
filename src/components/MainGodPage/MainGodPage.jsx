@@ -12,13 +12,10 @@ import {
 } from './MainGodPage.styles';
 
 const MainGodPage = ({ mythology }) => {
-	const [selectedTab, setSelectedTab] = useState('gods');
-	const [selectedInfo, setSelectedInfo] = useState(mythology.gods[1]);
-
-	const tabChange = tab => {
-		setSelectedTab(tab);
-		setSelectedInfo(mythology[tab][1]);
-	};
+	const [tabActive, setTabActive] = useState(0);
+	const [subTabActive, setSubTabActive] = useState(0);
+	const currentInfo = mythology.tabs[tabActive].subTabs[subTabActive];
+	console.log(currentInfo);
 
 	return (
 		<>
@@ -26,24 +23,43 @@ const MainGodPage = ({ mythology }) => {
 				<source media='(min-width: 1024px)' srcSet={mythology.bannerDesk} />
 				<source media='(min-width: 768px)' srcSet={mythology.bannerTab} />
 				<source media='(min-width: 360px)' srcSet={mythology.bannerMob} />
-				<img src={mythology.bannerMob} />
+				<img src='' />
 			</picture>
 			<StyledMainGods>
 				<StyledTitle>{mythology.name}</StyledTitle>
 				<StyledTabsBox>
-					<StyledTab onClick={() => tabChange('gods')}>GODS</StyledTab>
-					<StyledTab onClick={() => tabChange('creatures')}>CREATURE</StyledTab>
-					<StyledTab onClick={() => tabChange('myths')}>MYTHS</StyledTab>
+					{mythology.tabs.map((tab, index) => (
+						<StyledTab
+							key={tab.id}
+							$isActive={tabActive === index}
+							$color={mythology.color}
+							onClick={() => setTabActive(index)}
+						>
+							{tab.tabTitle}
+						</StyledTab>
+					))}
 				</StyledTabsBox>
 				<StyledContainer>
-					<StyledName>{selectedInfo.title.toUppercase()}</StyledName>
-					<StyledImage src={selectedInfo.imgMob} />
+					<StyledName>{currentInfo.title}</StyledName>
+					<picture>
+						<source media='(min-width: 1024px)' srcSet={currentInfo.imgDesk} />
+						<source media='(min-width: 768px)' srcSet={currentInfo.imgTab} />
+						<source media='(min-width: 360px)' srcSet={currentInfo.imgMob} />
+						<StyledImage src={currentInfo.imgMob} />
+					</picture>
 					<StyledDivider />
-					<StyledText>{selectedInfo.text}</StyledText>
+					<StyledText>{currentInfo.text}</StyledText>
 					<StyledTabsBox>
-						<StyledTab>JUPITER</StyledTab>
-						<StyledTab>MARS</StyledTab>
-						<StyledTab>VENUS</StyledTab>
+						{mythology.tabs[tabActive].subTabs.map((subtab, index) => (
+							<StyledTab
+								key={subtab.id}
+								$isActive={subTabActive === index}
+								$color={mythology.color}
+								onClick={() => setSubTabActive(index)}
+							>
+								{subtab.name.toUpperCase()}
+							</StyledTab>
+						))}
 					</StyledTabsBox>
 				</StyledContainer>
 			</StyledMainGods>

@@ -1,3 +1,4 @@
+import { Link } from 'react-router-dom';
 import {
 	StyledBox,
 	StyledContainer,
@@ -39,24 +40,32 @@ const MainHome = () => {
 				</StyledText>
 				<StyledDivider src='/assets/images/common/separator-h.png' />
 				<StyledContainer>
-					<StyledBox>
-						<img src='/assets/images/home/roman-logo.png' alt='Roman' />
-						<StyledTextBox>ROMAN</StyledTextBox>
-					</StyledBox>
-					<StyledBox>
-						<img src='/assets/images/home/greek-logo.png' alt='Greek' />
-						<StyledTextBox>GREEK</StyledTextBox>
-					</StyledBox>
-					<StyledBox>
-						<img src='/assets/images/home/egyptian-logo.png' alt='Egyptian' />
-						<StyledTextBox>EGYPTIAN</StyledTextBox>
-					</StyledBox>
-					<StyledBox>
-						<StyledImgBox>
-							<img src='/assets/images/home/nordic-logo.png' alt='Nordic' />
-						</StyledImgBox>
-						<StyledTextBox>NORDIC</StyledTextBox>
-					</StyledBox>
+					<Link to='/roman'>
+						<StyledBox>
+							<img src='/assets/images/home/roman-logo.png' alt='Roman' />
+							<StyledTextBox>ROMAN</StyledTextBox>
+						</StyledBox>
+					</Link>
+					<Link to='/greek'>
+						<StyledBox>
+							<img src='/assets/images/home/greek-logo.png' alt='Greek' />
+							<StyledTextBox>GREEK</StyledTextBox>
+						</StyledBox>
+					</Link>
+					<Link to='/egyptian'>
+						<StyledBox>
+							<img src='/assets/images/home/egyptian-logo.png' alt='Egyptian' />
+							<StyledTextBox>EGYPTIAN</StyledTextBox>
+						</StyledBox>
+					</Link>
+					<Link to='/nordic'>
+						<StyledBox>
+							<StyledImgBox>
+								<img src='/assets/images/home/nordic-logo.png' alt='Nordic' />
+							</StyledImgBox>
+							<StyledTextBox>NORDIC</StyledTextBox>
+						</StyledBox>
+					</Link>
 				</StyledContainer>
 				<StyledEndText>
 					"Incluso el Olimpo tembló ante el poder del trueno de Zeus."

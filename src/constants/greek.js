@@ -97,19 +97,21 @@ export const GREEK = {
 	bannerTab: '/assets/images/greek/banner-tablet.jpg',
 	color: COLORS.blue,
 	name: 'GREEK MYTHOLOGY',
-	gods: {
-		1: ZEUS,
-		2: ATHENA,
-		3: POSEIDON
-	},
-	creatures: {
-		1: MEDUSA,
-		2: MINOTAUR,
-		3: HYDRA
-	},
-	myths: {
-		1: ICARUS,
-		2: ORPHEUS,
-		3: PERSEUS
-	}
+	tabs: [
+		{
+			id: v4(),
+			tabTitle: 'GODS',
+			subTabs: [ZEUS, ATHENA, POSEIDON]
+		},
+		{
+			id: v4(),
+			tabTitle: 'CREATURES',
+			subTabs: [MEDUSA, MINOTAUR, HYDRA]
+		},
+		{
+			id: v4(),
+			tabTitle: 'MYTHS',
+			subTabs: [ICARUS, ORPHEUS, PERSEUS]
+		}
+	]
 };

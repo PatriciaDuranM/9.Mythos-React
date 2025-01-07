@@ -17,12 +17,14 @@ const StyledTitle = styled.h2`
 	font-weight: ${FONT_WEIGHT.black};
 	color: ${COLORS.gold};
 	margin: 0px;
+	text-align: center;
 `;
 
 const StyledTabsBox = styled.div`
 	display: flex;
 	flex-direction: row;
 	justify-content: space-between;
+	width: 335px;
 `;
 const StyledTab = styled.button`
 	width: 100px;
@@ -30,11 +32,12 @@ const StyledTab = styled.button`
 	display: flex;
 	justify-content: center;
 	align-items: center;
-	border: 1px solid ${COLORS.lightGold};
+	border: 1px solid
+		${({ $color, $isActive }) => ($isActive ? $color : COLORS.lightGold)};
 	font-size: 14px;
 	font-family: ${FONTS.playfair};
 	font-weight: ${FONT_WEIGHT.bold};
-	color: ${COLORS.lightGold};
+	color: ${({ $color, $isActive }) => ($isActive ? $color : COLORS.lightGold)};
 	background-color: transparent;
 
 	@media screen and (width>768px) {
@@ -59,20 +62,17 @@ const StyledName = styled.h3`
 	color: ${COLORS.gold};
 	margin: 0px;
 `;
-const StyledImage = styled.div`
+const StyledImage = styled.img`
 	width: 227px;
 	height: 227px;
-	background-image: url('/assets/images/roman/jupiter-mobile.jpg');
 
 	@media screen and (width>768px) {
 		width: 300px;
 		height: 300px;
-		background-image: url('/assets/images/roman/jupiter-tablet.jpg');
 	}
 
 	@media screen and (width>1024px) {
 		width: 1190px;
-		background-image: url('/assets/images/roman/jupiter-desktop.jpg');
 	}
 `;
 
@@ -80,6 +80,7 @@ const StyledDivider = styled.div`
 	width: 84px;
 	height: 24px;
 	background-image: url('/assets/images/common/separator-h.png');
+	background-repeat: no-repeat;
 
 	@media screen and (width>768px) {
 		background-image: url('/assets/images/common/separator-v.png');

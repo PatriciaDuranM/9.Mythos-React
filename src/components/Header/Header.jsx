@@ -30,7 +30,9 @@ const Header = () => {
 				<StyledMenu $menuOpen={menuOpen}>
 					{MENU.map(item => (
 						<StyledItem key={item.id}>
-							<StyledNavLink to={item.link}>{item.title}</StyledNavLink>
+							<StyledNavLink $color={item.color} to={item.link}>
+								{item.title}
+							</StyledNavLink>
 						</StyledItem>
 					))}
 				</StyledMenu>

@@ -98,19 +98,21 @@ export const ROMAN = {
 	bannerTab: '/assets/images/roman/banner-tablet.jpg',
 	color: COLORS.red,
 	name: 'ROMAN MYTHOLOGY',
-	gods: {
-		1: JUPITER,
-		2: MARS,
-		3: VENUS
-	},
-	creatures: {
-		1: FAUN,
-		2: FURIES,
-		3: BASILISK
-	},
-	myths: {
-		1: ROMULUS,
-		2: SABINE,
-		3: TARPEIA
-	}
+	tabs: [
+		{
+			id: v4(),
+			tabTitle: 'GODS',
+			subTabs: [JUPITER, MARS, VENUS]
+		},
+		{
+			id: v4(),
+			tabTitle: 'CREATURES',
+			subTabs: [FAUN, FURIES, BASILISK]
+		},
+		{
+			id: v4(),
+			tabTitle: 'MYTHS',
+			subTabs: [ROMULUS, SABINE, TARPEIA]
+		}
+	]
 };

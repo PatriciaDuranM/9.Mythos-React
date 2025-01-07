@@ -84,6 +84,9 @@ const StyledNavLink = styled(NavLink)`
 	font-size: 18px;
 	font-family: ${FONTS.cinzel};
 	font-weight: ${FONT_WEIGHT.bold};
+	&.active {
+		color: ${({ $color }) => $color};
+	}
 `;
 
 export {

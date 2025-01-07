@@ -8,7 +8,11 @@ const Router = () => {
 		<Routes>
 			<Route path='/' element={<Home />}></Route>
 			{MENU.map(item => (
-				<Route key={item.id} element={<Gods />} path={item.link}></Route>
+				<Route
+					key={item.id}
+					element={<Gods mythology={item.mythologyContent} />}
+					path={item.link}
+				></Route>
 			))}
 		</Routes>
 	);
